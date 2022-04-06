@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @Entity
@@ -33,6 +30,7 @@ public class Student {
     private String lastName;
 
     @NotEmpty(message = "Email is required")
+    @Email
     @Column(name = "email", unique = true)
     private String email;
 
